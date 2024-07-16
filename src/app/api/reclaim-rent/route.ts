@@ -63,6 +63,7 @@ export const POST = async(req:Request) => {
 
         return Response.json(payload, {headers:ACTIONS_CORS_HEADERS});
     } catch (error) {
-        return Response.json("An Unknown error occured", {status:400});
+        console.error(error);
+        return new Response("An Unknown error occurred", { status: 400, headers: ACTIONS_CORS_HEADERS });
     }
 }
